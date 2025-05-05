@@ -54,7 +54,7 @@ class RoutePlanner:
             'details': 'distance,duration', # Request distance and duration
         }
 
-        # Removed self.stdout.write(...) calls
+        
 
         try:
             # Use GET request as shown in the image
@@ -98,23 +98,23 @@ class RoutePlanner:
             initial_route_coords, initial_distance_m, initial_duration_s = self._get_initial_route(self.start_coords, self.end_coords)
             initial_distance_miles = initial_distance_m / 1609.34
         except Exception as e:
-            # Removed self.stdout.write(...) calls
+            
             return {'error': f"Could not plan route: {e}"}
 
 
         # 2. Find optimal fuel stops along this initial route geometry
-        # Removed self.stdout.write(...) calls
+        
         # find_stops now queries the GasStation model directly and uses the route geometry
         # to identify stops along the path.
         optimal_stops = find_stops(initial_route_coords, initial_distance_miles, self.MAX_RANGE)
 
-        # Removed self.stdout.write(...) calls
+        
         # Sort stops by distance from start (approximation from find_stops)
         optimal_stops.sort(key=lambda x: x.get('distance_from_start_miles', 0))
 
 
         # 3. Calculate the total fuel cost based on segments of the initial route defined by the stops.
-        # Removed self.stdout.write(...) calls
+        
         total_fuel_cost = self._calculate_total_fuel_cost_on_route(initial_route_coords, initial_distance_miles, optimal_stops)
 
 
