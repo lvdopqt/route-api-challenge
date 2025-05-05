@@ -1,0 +1,27 @@
+# Python __pycache__ and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# SQLite database
+*.sqlite3
+
+# Django migrations (optional, keep if you want clean repo history)
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Environment variables and virtual env
+.env
+venv/
+env/
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Byte-compiled files
+*.pyd
+*.pdb
+
+# macOS specific
+.DS_Store
