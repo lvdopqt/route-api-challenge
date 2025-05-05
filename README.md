@@ -13,7 +13,7 @@ Follow these steps to get the project up and running:
 1. **Clone the repository:**
 
 ```
-git clone &lt;repository_url>
+git clone <repository_url>
 cd route_fuel_api
 ```
 
@@ -72,8 +72,9 @@ This flow allows users to get a planned route between two points, including opti
 
 * **Example Request:**
 
-curl "https://www.google.com/search?q=http://127.0.0.1:8000/route-plan/%3Fstart%3D-74.0060,40.7128%26end%3D-77.0369,38.9072"
-
+```
+curl "http://127.0.0.1:8000/route-plan/%3Fstart%3D-74.0060,40.7128%26end%3D-77.0369,38.9072"
+```
 
 * **Response:**
 A JSON object containing the route details, including:
